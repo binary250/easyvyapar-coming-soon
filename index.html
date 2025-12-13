@@ -389,17 +389,19 @@
         }
       });
 
-      // Mobile scroll intent
-      window.addEventListener("scroll", () => {
-        if (window.innerWidth <= 768) {
-          const scrollRatio =
-            (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+      // Mobile scroll intent (reliable)
+let mobileScrollTriggered = false;
 
-          if (scrollRatio > 0.65) {
-            showPopup();
-          }
-        }
-      });
+window.addEventListener("scroll", () => {
+  if (
+    window.innerWidth <= 768 &&
+    !mobileScrollTriggered &&
+    window.scrollY > 120
+  ) {
+    mobileScrollTriggered = true;
+    showPopup();
+  }
+});
 
       // expose for popup CTA
       window.goToWaitlist = function () {
@@ -417,6 +419,7 @@
 
 
 </html>
+
 
 
 
