@@ -390,18 +390,26 @@
       });
 
       // Mobile scroll intent (reliable)
-let mobileScrollTriggered = false;
+let mo// ===== MOBILE POPUP (FAIL-SAFE) =====
+if (window.innerWidth <= 768) {
+  let mobilePopupShown = false;
 
-window.addEventListener("scroll", () => {
-  if (
-    window.innerWidth <= 768 &&
-    !mobileScrollTriggered &&
-    window.scrollY > 120
-  ) {
-    mobileScrollTriggered = true;
-    showPopup();
-  }
-});
+  // 1️⃣ Time-based fallback (most reliable)
+  setTimeout(() => {
+    if (!mobilePopupShown) {
+      showPopup();
+      mobilePopupShown = true;
+    }
+  }, 8000); // 8 seconds
+
+  // 2️⃣ Scroll-based trigger (bonus)
+  window.addEventListener("scroll", () => {
+    if (!mobilePopupShown && window.scrollY > 100) {
+      showPopup();
+      mobilePopupShown = true;
+    }
+  }, { passive: true });
+}
 
       // expose for popup CTA
       window.goToWaitlist = function () {
@@ -419,6 +427,7 @@ window.addEventListener("scroll", () => {
 
 
 </html>
+
 
 
 
