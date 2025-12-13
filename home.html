@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyVyapar-OS | Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">EasyVyapar-OS</div>
+      <ul class="nav-menu">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Coming January 2026
+      </div>
+      <h1>
+        Simple Accounting<br>
+        for <span class="highlight">Daily Business</span>
+      </h1>
+      <p class="hero-description">
+        Professional accounting software for your daily business. Works completely offline,
+        GST ready, and your data stays with you. Whether online or offline, your business stays running.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Offline</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">GST</span>
+          <span class="stat-label">Ready</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">₹ 0</span>
+          <span class="stat-label">Cloud Cost</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-section">
+      <div class="countdown-label">Launching In</div>
+      <div class="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-text">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-text">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-text">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-text">Seconds</span>
+        </div>
+      </div>
+      <div class="launch-info">
+        Expected Launch: <strong>January 1, 2026</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section" id="waitlist">
+    <div class="form-header">
+      <h2>Join the Waitlist</h2>
+      <p>Get early access to professional accounting</p>
+    </div>
+
+    <div class="form-card">
+      <form id="waitlistForm" class="waitlist" action="https://formspree.io/f/xeoynvrl" method="post">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Business Email</label>
+          <input type="email" id="email" name="email" placeholder="your@business.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Mobile Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="business">Business Type</label>
+          <select id="business" name="business_type" required>
+            <option value="">Select your business type</option>
+            <option value="Trader / Wholesaler">Trader / Wholesaler</option>
+            <option value="Kirana / Grocery">Kirana / Grocery Shop</option>
+            <option value="Construction Supplier">Construction Material Supplier</option>
+            <option value="Manufacturer">Small Manufacturer / Brick Kiln</option>
+            <option value="Retail Shop">Retail Shop (Non-POS)</option>
+            <option value="Other">Other Credit-Based Business</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Get Early Access</button>
+
+        <div class="success-message" id="successMessage">
+          ✓ Thanks! You’re on the early access list.
+        </div>
+        <input type="hidden" name="_redirect" value="thankyou.html">
+      </form>
+
+      <div class="form-footer">
+        <img src="location.png" alt="India Flag">
+        Made in India • Your data stays on your system
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="features-container">
+      <div class="features-header">
+        <h2>Why Choose EasyVyapar-OS?</h2>
+        <p>Professional software built for daily business operations</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">💻</span>
+          <h3>Works Offline</h3>
+          <p>No internet needed. If your computer is on, your business is running.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📝</span>
+          <h3>Easy Billing</h3>
+          <p>Create GST bills and purchase invoices in one place. Simple and fast.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <h3>Data Security</h3>
+          <p>Your data stays only on your computer. Never shared with anyone.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Instant Reports</h3>
+          <p>Sales, purchases, profit - everything in one click.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">
+            <img src="location.png" alt="India Flag">
+          </span>
+          <h3>GST Ready</h3>
+          <p>Automatic GST calculation. File returns easily.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">✅</span>
+          <h3>Audit Safe</h3>
+          <p>Every transaction is recorded. Your CA will have no issues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="trust-section">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAASTAAALEwEAmpwYAAAAWUlEQVR4nO3QMQ0AIBAEsVMIB07gBApw8j8GkiIE7bJ3wCQzq2rbBwAAAH8kQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECPjoBjgBB+MnEKGwAAAAAElFTkSuQmCC"
+            alt="India Flag">
+        </div>
+        <h4>Built for India</h4>
+        <p>Specially designed for Indian businesses</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <h4>Privacy First</h4>
+        <p>Your data always under your control</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <h4>Fast & Reliable</h4>
+        <p>Slow internet? No problem</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <h4>Simple To Use</h4>
+        <p>No training required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>EasyVyapar-OS</h3>
+          <p>Simple accounting software for Indian MSMEs. Offline-first, secure, and perfect for daily business
+            operations.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">𝕏</a>
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">f</a>
+            <a href="#" class="social-link">▶</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#docs">Documentation</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#changelog">Changelog</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="#about">About Us</a>
+            <a href="#blog">Blog</a>
+            <a href="#careers">Careers</a>
+            <a href="#contact">Contact</a>
+            <a href="#press">Press Kit</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#security">Security</a>
+            <a href="#compliance">Compliance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 EasyVyapar-OS. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="exit-modal" id="exitModal">
+    <div class="exit-card">
+      <h3>Before you go…</h3>
+
+      <p class="price-line">
+        Launch Offer <strong>₹2,999</strong>
+        <span class="strike">₹4,999</span>
+      </p>
+
+      <ul class="benefits">
+        <li>✔ Lifetime free software updates</li>
+        <li>✔ Priority support for 1 year</li>
+        <li>✔ Free onboarding & training session</li>
+      </ul>
+
+      <button onclick="goToWaitlist()">Join Early Access & Save ₹2,000</button>
+
+      <p class="note">Available for early access users only</p>
+    </div>
+  </div>
+
+  <script>
+    /* =========================
+       COUNTDOWN TIMER
+    ========================= */
+    const launchDate = new Date("2026-01-01T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = "00";
+        });
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* =========================
+       DOM READY
+    ========================= */
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =========================
+         WAITLIST FORM SUBMISSION
+      ========================= */
+      const form = document.getElementById("waitlistForm");
+      const successMessage = document.getElementById("successMessage");
+
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const businessSelect = document.getElementById("business");
+          if (!businessSelect || !businessSelect.value) {
+            alert("Please select your business type");
+            businessSelect.focus();
+            return;
+          }
+
+          // FAST UX
+          localStorage.setItem("joinedWaitlist", "true");
+          window.location.href = "thankyou.html";
+
+          // BACKGROUND SUBMIT
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+          }).catch(() => { });
+        });
+      }
+
+      /* =========================
+         SMOOTH SCROLL
+      ========================= */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(anchor.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      /* =========================
+         MOBILE MENU
+      ========================= */
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navMenu = document.querySelector(".nav-menu");
+
+      if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+          mobileMenuBtn.textContent = navMenu.classList.contains("open") ? "✕" : "☰";
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach(link => {
+          link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+            mobileMenuBtn.textContent = "☰";
+          });
+        });
+      }
+
+      /* =========================
+         EXIT POPUP LOGIC
+      ========================= */
+      if (localStorage.getItem("joinedWaitlist") === "true") return;
+
+      const exitModal = document.getElementById("exitModal");
+      if (!exitModal) return;
+
+      let popupShown = false;
+
+      function showPopup() {
+        if (!popupShown) {
+          exitModal.style.display = "flex";
+          popupShown = true;
+        }
+      }
+
+      // Desktop exit intent
+      document.addEventListener("mouseleave", (e) => {
+        if (e.clientY < 0 && window.innerWidth > 768) {
+          showPopup();
+        }
+      });
+
+      // Mobile scroll intent
+      window.addEventListener("scroll", () => {
+        if (window.innerWidth <= 768) {
+          const scrollRatio =
+            (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+
+          if (scrollRatio > 0.65) {
+            showPopup();
+          }
+        }
+      });
+
+      // expose for popup CTA
+      window.goToWaitlist = function () {
+        exitModal.style.display = "none";
+        const section = document.getElementById("waitlist");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
+
+    });
+  </script>
+
+</body>
+
+</html>
