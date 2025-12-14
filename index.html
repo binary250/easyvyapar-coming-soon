@@ -18,10 +18,10 @@
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <div class="logo">EasyVyapar-OS</div>
-<p class="tagline">
-  Online or offline — your business stays in control.
-</p>
+      <div>
+        <div class="logo">EasyVyapar-OS</div>
+        <p class="tagline">Online or offline — your business stays in control.</p>
+      </div>
       <ul class="nav-menu">
         <li><a href="#features">Features</a></li>
         <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
@@ -128,7 +128,7 @@
         <button type="submit" class="submit-btn">Get Early Access</button>
 
         <div class="success-message" id="successMessage">
-          ✓ Thanks! You’re on the early access list.
+          ✓ Thanks! You're on the early access list.
         </div>
         <input type="hidden" name="_redirect" value="thankyou.html">
       </form>
@@ -195,8 +195,7 @@
     <div class="trust-grid">
       <div class="trust-item">
         <div class="trust-icon">
-          <img
-            src="location.png" alt="India Flag">
+          <img src="location.png" alt="India Flag">
         </div>
         <h4>Built for India</h4>
         <p>Specially designed for Indian businesses</p>
@@ -247,6 +246,7 @@
     </div>
   </footer>
 
+  <!-- Exit Modal -->
   <div class="exit-modal" id="exitModal">
     <div class="exit-card">
       <h3>Special early-access offer…</h3>
@@ -267,8 +267,7 @@
       <p class="note">Available for early access users only</p>
     </div>
   </div>
-
-  <script>
+<script>
     /* =========================
        COUNTDOWN TIMER
     ========================= */
@@ -309,7 +308,6 @@
          WAITLIST FORM SUBMISSION
       ========================= */
       const form = document.getElementById("waitlistForm");
-      const successMessage = document.getElementById("successMessage");
 
       if (form) {
         form.addEventListener("submit", (e) => {
@@ -371,15 +369,23 @@
       /* =========================
          EXIT POPUP LOGIC
       ========================= */
-      if (localStorage.getItem("joinedWaitlist") === "true") return;
+      // Check if user already joined
+      if (localStorage.getItem("joinedWaitlist") === "true") {
+        console.log("User already joined waitlist, popup disabled");
+        return;
+      }
 
       const exitModal = document.getElementById("exitModal");
-      if (!exitModal) return;
+      if (!exitModal) {
+        console.log("Exit modal not found");
+        return;
+      }
 
       let popupShown = false;
 
       function showPopup() {
         if (!popupShown) {
+          console.log("Showing popup");
           exitModal.style.display = "flex";
           popupShown = true;
         }
@@ -387,34 +393,36 @@
 
       // Desktop exit intent
       document.addEventListener("mouseleave", (e) => {
-        if (e.clientY < 0 && window.innerWidth > 768) {
+        if (e.clientY <= 0 && window.innerWidth > 768) {
+          console.log("Desktop exit intent triggered");
           showPopup();
         }
       });
 
-      // Mobile scroll intent (reliable)
-let mo// ===== MOBILE POPUP (FAIL-SAFE) =====
-if (window.innerWidth <= 768) {
-  let mobilePopupShown = false;
+      // Mobile popup (fail-safe)
+      if (window.innerWidth <= 768) {
+        let mobilePopupShown = false;
 
-  // 1️⃣ Time-based fallback (most reliable)
-  setTimeout(() => {
-    if (!mobilePopupShown) {
-      showPopup();
-      mobilePopupShown = true;
-    }
-  }, 8000); // 8 seconds
+        // Time-based fallback
+        setTimeout(() => {
+          if (!mobilePopupShown) {
+            console.log("Mobile time-based popup triggered");
+            showPopup();
+            mobilePopupShown = true;
+          }
+        }, 8000);
 
-  // 2️⃣ Scroll-based trigger (bonus)
-  window.addEventListener("scroll", () => {
-    if (!mobilePopupShown && window.scrollY > 100) {
-      showPopup();
-      mobilePopupShown = true;
-    }
-  }, { passive: true });
-}
+        // Scroll-based trigger
+        window.addEventListener("scroll", () => {
+          if (!mobilePopupShown && window.scrollY > 100) {
+            console.log("Mobile scroll-based popup triggered");
+            showPopup();
+            mobilePopupShown = true;
+          }
+        }, { passive: true });
+      }
 
-      // expose for popup CTA
+      // Expose for popup CTA
       window.goToWaitlist = function () {
         exitModal.style.display = "none";
         const section = document.getElementById("waitlist");
@@ -423,20 +431,10 @@ if (window.innerWidth <= 768) {
         }
       };
 
+      console.log("Exit popup initialized");
     });
   </script>
 
 </body>
 
-
 </html>
-
-
-
-
-
-
-
-
-
-
