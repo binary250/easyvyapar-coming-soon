@@ -20,7 +20,7 @@
     <div class="nav-container">
       <div>
         <div class="logo">EasyVyapar-OS</div>
-        <p class="tagline">Online or offline — your business stays in control.</p>
+        <p class="tagline">Simple accounting that works even without internet.</p>
       </div>
       <ul class="nav-menu">
         <li><a href="#features">Features</a></li>
@@ -35,15 +35,19 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="dot"></span>
-        Coming February 2026
+        Launching Soon • Early Access Open
       </div>
       <h1>
         Simple Accounting<br>
         for <span class="highlight">Daily Business</span>
       </h1>
       <p class="hero-description">
-        Professional accounting software for your daily business. Works completely offline,
-        GST ready, and your data stays with you. Whether online or offline, your business stays running.
+      <p class="hero-description">
+        Tired of complicated accounting software?
+        EasyVyapar-OS helps you manage sales, purchases, and customer ledgers
+        without internet, without confusion, and without losing control of your data.
+      </p>
+
       </p>
       <div class="hero-stats">
         <div class="stat">
@@ -83,7 +87,7 @@
         </div>
       </div>
       <div class="launch-info">
-        Expected Launch: <strong>February 15, 2026</strong>
+        Expected Launch In: <strong>February 15, 2026</strong>
       </div>
     </div>
   </section>
@@ -92,10 +96,20 @@
   <section class="form-section" id="waitlist">
     <div class="form-header">
       <h2>Join the Waitlist</h2>
-      <p>Get early access to professional accounting</p>
+      <p>
+        Be among the first businesses to use EasyVyapar-OS
+        and get special launch benefits.
+      </p>
     </div>
 
     <div class="form-card">
+      <ul class="waitlist-benefits">
+        <li> Special launch price (save ₹2,000)</li>
+        <li> Priority support during early months</li>
+        <li> Free onboarding & training session</li>
+        <li> Help shape features for your business</li>
+      </ul>
+
       <form id="waitlistForm" class="waitlist" action="https://formspree.io/f/xeoynvrl" method="post">
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -125,7 +139,7 @@
           </select>
         </div>
 
-        <button type="submit" class="submit-btn">Get Early Access</button>
+        <button type="submit" class="submit-btn">Join Early Access (Limited)</button>
 
         <div class="success-message" id="successMessage">
           ✓ Thanks! You're on the early access list.
@@ -236,7 +250,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 EasyVyapar-OS. All rights reserved. Made for Indian Businesses, Big or Small </p>
+        <p>© 2025 EasyVyapar-OS. All rights reserved. Built in India for Indian businesses. </p>
         <div class="footer-bottom-links">
           <a href="#privacy">Privacy</a>
           <a href="#terms">Terms</a>
@@ -267,7 +281,7 @@
       <p class="note">Available for early access users only</p>
     </div>
   </div>
-<script>
+  <script>
     /* =========================
        COUNTDOWN TIMER
     ========================= */
@@ -321,8 +335,14 @@
           }
 
           // FAST UX
+          const nameInput = document.getElementById("name");
+          if (nameInput && nameInput.value) {
+            localStorage.setItem("waitlistUserName", nameInput.value.trim());
+          }
+
           localStorage.setItem("joinedWaitlist", "true");
           window.location.href = "thankyou.html";
+
 
           // BACKGROUND SUBMIT
           fetch(form.action, {
