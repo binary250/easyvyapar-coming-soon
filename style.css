@@ -129,6 +129,14 @@ nav {
     cursor: pointer;
 }
 
+.tagline {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
 /* Hero Section */
 .hero {
     margin-top: 72px;
@@ -866,4 +874,5 @@ footer {
     .nav-menu.open {
         display: flex;
     }
+
 }
