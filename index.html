@@ -4,15 +4,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EasyVyapar-OS | Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+
+  <meta name="description"
+    content="EasyVyapar OS helps Indian shop owners manage billing, udhaar, GST reports and accounts easily. Built for small businesses & traders.">
+
+  <meta name="robots" content="index, follow">
+
+  <title>EasyVyapar OS – Smart Billing & Accounting Software for Indian Businesses</title>
+
+  <link rel="canonical" href="https://easyvyapar-os.vercel.app/">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+
+  <meta property="og:title" content="EasyVyapar OS – Smart Billing Software">
+  <meta property="og:description" content="Simple billing, udhaar tracking & GST reports for Indian businesses.">
+  <meta property="og:image" content="https://easyvyapar-os.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://easyvyapar-os.vercel.app/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EasyVyapar OS – Smart Billing Software">
+  <meta name="twitter:description" content="Simple billing, udhaar tracking & GST reports for Indian businesses.">
+  <meta name="twitter:image" content="https://easyvyapar-os.vercel.app/og-image.png">
+
+  <meta name="theme-color" content="#020617">
+
   <link rel="stylesheet" href="style.css">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EasyVyapar OS",
+  "description": "Offline-first billing and accounting software for Indian small businesses and traders.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "url": "https://easyvyapar-os.vercel.app/",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/PreOrder"
+  }
+}
+</script>
 </head>
+
 
 <body>
   <!-- Navigation -->
@@ -41,7 +85,6 @@
         Simple Accounting<br>
         for <span class="highlight">Daily Business</span>
       </h1>
-      <p class="hero-description">
       <p class="hero-description">
         Tired of complicated accounting software?
         EasyVyapar-OS helps you manage sales, purchases, and customer ledgers
@@ -148,7 +191,7 @@
       </form>
 
       <div class="form-footer">
-        <img src="location.png" alt="India Flag">
+        <img src="location.png" alt="Made in India accounting software">
         Made in India • Your data stays on your system
       </div>
     </div>
@@ -453,8 +496,46 @@
 
       console.log("Exit popup initialized");
     });
-  </script>
 
+    (function () {
+      const today = new Date();
+      const month = today.getMonth() + 1;
+      const date = today.getDate();
+
+      window.__IS_CHRISTMAS__ = (month === 12 && date >= 24 && date <= 30);
+      window.__IS_NEWYEAR__ =
+        (month === 12 && date === 31) || (month === 1 && date === 1);
+    })();
+
+    (function () {
+      if (!window.__IS_CHRISTMAS__ && !window.__IS_NEWYEAR__) return;
+
+      const snow = document.createElement("div");
+      snow.id = "snowfall";
+      document.body.appendChild(snow);
+
+      for (let i = 0; i < 60; i++) {
+        const flake = document.createElement("span");
+        flake.innerHTML = "❄";
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.fontSize = 10 + Math.random() * 12 + "px";
+        flake.style.opacity = Math.random();
+        flake.style.animationDuration = 6 + Math.random() * 10 + "s";
+        snow.appendChild(flake);
+      }
+    })();
+
+    (function () {
+      if (!window.__IS_CHRISTMAS__) return;
+
+      const santa = document.createElement("div");
+      santa.id = "santa-sleigh";
+      santa.innerHTML = `
+    <img src="santa-sleigh.svg" alt="Santa Sleigh">
+  `;
+      document.body.appendChild(santa);
+    })();
+  </script>
 </body>
 
 </html>
